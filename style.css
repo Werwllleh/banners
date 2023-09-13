@@ -230,3 +230,15 @@ body {
 
 .count__banner-img img{
 }
+
+
+@media (max-width: 1200px) {
+    .passport__banner-text h2 {
+        font-size: 24px;
+        margin: 0 0 32px 0;
+    }
+
+    .count__banner-text h2{
+        font-size: 24px;
+    }
+}
