@@ -1,4 +1,6 @@
 /* Reset and base styles  */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap');
+
 * {
     padding: 0px;
     margin: 0px;
@@ -41,7 +43,6 @@ img {
 }
 
 img, svg {
-    max-width: 100%;
     height: auto;
 }
 
@@ -67,6 +68,9 @@ button, input[type="submit"] {
     box-shadow: none;
     background-color: transparent;
     background: none;
+}
+
+button {
     cursor: pointer;
 }
 
@@ -88,14 +92,140 @@ legend {
     display: block;
 }
 
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
 
 .passport__banner {
     position: relative;
     max-width: 1200px;
+    background-color: #FFFFFF;
+    z-index: -2;
 }
 
 .passport__banner::before {
     content: '';
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./src/images/lines.svg");
+    z-index: -1;
+}
+
+.passport__banner-body {
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.passport__banner-text {
+    padding: 64px 0 0 60px;
+}
+
+.passport__banner-text h2{
+    color: #333;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    max-width: 510px;
+    margin: 0 0 32px 0;
+}
+
+.passport__banner-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    background: #0090E3;
+    padding: 12px 48px;
+}
+
+.passport__banner-img {
+    position: relative;
+}
+
+.passport__banner-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 624px;
+    height: 100%;
+    background-image: url("./src/images/circle.svg");
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.passport__banner-img img{
+
+}
+
+
+
+
+.count__banner {
+    position: relative;
     max-width: 1200px;
+    background-color: #FFFFFF;
+    z-index: -2;
+}
+
+.count__banner-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.count__banner-text {
+    padding: 102px 10px 116px 64px;
+}
+
+.count__banner-text h2{
+    color: #333;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0 0 20px 0;
+}
+
+.count__banner-text p{
+    color: rgba(51, 51, 51, 0.90);
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 141.176% */
+}
+
+.count__banner-img {
+    position: relative;
+}
+
+.count__banner-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./src/images/lines2.png");
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.count__banner-img img{
+
 }
