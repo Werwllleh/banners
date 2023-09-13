@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap');
 
 * {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     border: none;
 }
 
@@ -36,18 +36,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 ul, ul li {
     list-style: none;
-}
-
-img {
-    vertical-align: top;
-}
-
-img, svg {
-    height: auto;
-}
-
-address {
-    font-style: normal;
 }
 
 /* Form */
@@ -84,10 +72,6 @@ button::-moz-focus-inner {
     border: 0;
 }
 
-label {
-    cursor: pointer;
-}
-
 legend {
     display: block;
 }
@@ -101,30 +85,18 @@ body {
     position: relative;
     max-width: 1200px;
     width: 100%;
+    height: 390px;
     background-color: #FFFFFF;
-    z-index: -2;
-}
-
-.passport__banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("./src/images/lines.svg");
-    z-index: -1;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
 }
 
 .passport__banner-body {
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-
 }
 
 .passport__banner-text {
-    padding: 64px 0 0 60px;
+    padding: 64px 0 160px 60px;
 }
 
 .passport__banner-text h2{
@@ -138,9 +110,6 @@ body {
 }
 
 .passport__banner-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: #FFF;
     text-align: center;
     font-size: 16px;
@@ -154,11 +123,32 @@ body {
     padding: 12px 48px;
 }
 
-.passport__banner-img {
-    position: relative;
+.passport__banner-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 42px;
+    width: 100%;
+    max-width: 624px;
+    height: 100%;
+    background-image: url("./src/images/paper.png");
+    background-repeat: no-repeat;
+    z-index: 1;
+    transition: .5s;
 }
 
-.passport__banner-img::before {
+.passport__banner-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./src/images/lines.svg");
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+
+.passport__banner-bg::after {
     content: '';
     position: absolute;
     top: 0;
@@ -169,11 +159,67 @@ body {
     background-image: url("./src/images/circle.svg");
     background-repeat: no-repeat;
     z-index: -1;
+    transition: .5s;
 }
 
-.passport__banner-img img{
 
+@media (max-width: 992px) {
+
+    .passport__banner-bg::after {
+        opacity: .7;
+    }
 }
+
+@media (max-width: 768px) {
+    .passport__banner-bg::before {
+        opacity: .7;
+        right: 0;
+    }
+
+    .passport__banner-bg::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 500px) {
+    .passport__banner-text h2 {
+        font-size: 24px;
+        margin: 0 0 20px 0;
+    }
+
+    .passport__banner {
+        height: 290px;
+    }
+
+    .passport__banner-text {
+        text-align: center;
+        padding: 100px 10px 25px 10px;
+    }
+
+    .passport__banner-bg::after {
+        right: -20%;
+        opacity: .4;
+    }
+
+    .passport__banner {
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(120,120,157,1) 0%, rgba(255,255,255,1) 0%, rgba(110,198,255,1) 0%, rgba(255,255,255,1) 52%);
+    }
+}
+
+@media (max-width: 375px) {
+    .passport__banner-text {
+        padding: 70px 10px 25px 10px;
+    }
+    .passport__banner-text h2 {
+        font-size: 20px;
+    }
+}
+
 
 
 
@@ -182,13 +228,14 @@ body {
     position: relative;
     max-width: 1200px;
     width: 100%;
-    background-color: #FFFFFF;
-    z-index: -2;
+    height: 350px;
+    background-color: #F7FAFB;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
 }
 
 .count__banner-body {
-    display: flex;
-    justify-content: space-between;
 }
 
 .count__banner-text {
@@ -210,35 +257,142 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 24px; /* 141.176% */
+    max-width: 505px;
 }
 
-.count__banner-img {
-    position: relative;
-}
-
-.count__banner-img::before {
+.count__banner::after {
     content: '';
     position: absolute;
     top: 0;
     right: 0;
-    width: 100%;
-    height: 100%;
+    width: 550px;
+    height: 350px;
     background-image: url("./src/images/lines2.svg");
     background-repeat: no-repeat;
+    transition: .5s;
+    z-index: -2;
+}
+
+.count__banner-img {
+    position: relative;
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*right: 85px;*/
+    /*width: 500px;*/
+    /*height: 350px;*/
+    /*background-image: url("./src/images/ipad.png");*/
+    /*background-repeat: no-repeat;*/
+    /*z-index: -2;*/
+}
+
+.count__banner-img img {
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+    width: 500px;
     z-index: -1;
+    transition: .5s;
 }
 
-.count__banner-img img{
+.count__banner-ring {
+    position: absolute;
+    width: 164px;
+    height: 164px;
+    bottom: 13px;
+    right: 480px;
+    border-radius: 500px;
+    border: 5px solid #F7FAFB;
+    background: #E7196B;
+    z-index: -1;
+    transition: .5s;
 }
 
+.ring__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+}
+
+.ring__title {
+    color: #F7FAFB;
+    text-align: center;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 60px */
+}
+
+.ring__text {
+    color: #F7FAFB;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px; /* 114.286% */
+}
 
 @media (max-width: 1200px) {
-    .passport__banner-text h2 {
-        font-size: 24px;
-        margin: 0 0 32px 0;
+    .count__banner-ring {
+        right: 280px;
     }
+    .count__banner-img img {
+        opacity: .4;
+    }
+}
 
-    .count__banner-text h2{
+@media (max-width: 992px) {
+    .count__banner-ring {
+        right: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .count__banner-text p {
+        max-width: 250px;
+    }
+    .count__banner-text {
+        padding: 80px 10px 110px 64px;
+    }
+}
+
+@media (max-width: 600px) {
+    .count__banner-img img {
+        right: 0;
+    }
+    .count__banner-text {
+        padding: 60px 10px 110px 64px;
+    }
+}
+
+@media (max-width: 500px) {
+    .count__banner {
+        height: 290px;
+    }
+    .count__banner-text h2 {
         font-size: 24px;
+    }
+    .count__banner-img img {
+        width: 430px;
+    }
+    .count__banner-ring {
+        right: -200%;
+    }
+}
+
+@media (max-width: 375px) {
+    .count__banner-text h2 {
+        font-size: 20px;
+    }
+    .count__banner-text {
+        text-align: center;
+        padding: 70px 10px 25px 10px;
+    }
+    .count__banner-text p {
+         max-width: none;
+    }
+    .count__banner-img img {
+        right: -200%;
     }
 }
